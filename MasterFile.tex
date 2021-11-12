@@ -1,0 +1,115 @@
+\documentclass{ufdissertation}\sloppy
+%\documentclass[editMode]{ufdissertation}\sloppy
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%                 User Package and Style File loading.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%\usepackage{CustomMacros}%  This is a user macro/style file.
+
+\usepackage{tikz}%       tikz is used by almost everyone, but certainly by me for this.
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.17} %   pgfplots is tikz but better.
+\setcounter{tocdepth}{2}
+
+\usepackage{ragged2e}
+%\justifying
+\usepackage{eucal}
+\usepackage{multirow}
+\usepackage{subcaption}
+\captionsetup{compatibility=false}
+%\usepackage[justification=justified,format=plain]{caption}
+
+\newcommand{\icol}[1]{% inline column vector
+  \left(\begin{smallmatrix}#1\end{smallmatrix}\right)%
+}
+\usepackage{rotating}
+\usepackage{comment}
+
+\input{mycommands.tex}
+
+%\usepackage{url}
+
+
+%stupid footnote format
+%\setlength{\skip\footins}{2cm}
+%\footnoterule{\kern-3pt \hrule width 4in \kern 2.6pt}
+
+%\usepackage{amsrefs}%   amsrefs contains the .bibtex style content for mathematician papers.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%                     User Configuration commands
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%% Uncomment the relevant line below if you have tables or figures.
+\haveTablestrue%        Uncomment this if you have tables in your thesis.
+\haveFigurestrue%       Uncomment this if you have figures in your thesis.
+%\haveObjectstrue%       Uncomment this if you have Objects in your thesis. This is almost certainly not the case however.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%% Below are the commands to set the degree type, department, graduation time, and chair. 
+%       Most of these are self explanatory. 
+%       Note: The \chair command takes an optional argument for a cochair. 
+%           So if John was your chair and Jacob was a cochair, you would use \chair[Jacob]{John}.
+%           If John was your chair and you had no cochair, you can simply use \chair{John}.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\title{Search for non-resonant Higgs boson pair production in the four bottom quark decay channel with the CMS experiment}%  Put your title here.
+
+\degreeType{Doctorate of Philosophy}%   Official name of your degree; eg "Doctorate of Philosophy".
+\major{Physics}%                    Your official Department
+\author{Daniel Fernando Guerrero Ibarra}%                  Your Name
+\thesisType{Dissertation}%              Dissertation (PhD) or Thesis (Masters)
+\degreeYear{2021}%                      Intended graduation year (not the year you submit the thesis)
+\degreeMonth{December}%                   Month of graduation should be May, August, or December.
+\chair[Darin Acosta]{Jacobo Konigsberg}%            Chair and Cochair (see comment block above).
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%% For each of the following, type in the name of the file that contains each section. 
+%       They are assumed to be tex files, but if they aren't the command takes an optional argument for the extension.
+%       So, you could load dedication.tex as your dedication file using \setDedicationFile{dedication}
+%       You could load dedication.txt instead with \setDedicationFile[txt]{dedication}.
+%       NOTE: For some compilers they may or may not add a .tex to the end of the file automatically.
+%           If you get a "couldn't find dedication.tex.tex" type error, try the command with an empty optional argument,
+%           e.g. \setDedicationFile[]{dedication}
+%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%% These are REQUIRED sections; easiest to do via these commands.
+
+\setDedicationFile{dedication}%                 Dedication Page
+\setAcknowledgementsFile{acknowledgements}%     Acknowledgements Page
+\setAbstractFile{abstract}%                     Abstract Page (This should only include the abstract itself)
+\setReferenceFile{reference}{bst/JHEP}%         References. First argument is your bibtex source file %unsrturl %bst/apsrev4-2
+%                                                       the second argument is your bibtex style file.
+%\setReferenceFile{reference}{bst/apsrev4-2}
+\setBiographicalFile{biography}%                Biography file of the Author (you).
+%%% These are NOT required, so only use them if you actually need/have them.
+
+\setAbbreviationsFile{abbreviations}%           Abbreviations Page
+\setAppendixFile{appendix}%                     Appendix Content; hyperlinking might be weird.
+\multipleAppendixtrue%                          Uncomment this if you have more than one appendix, 
+%                                                   comment it if you have only one appendix.
+
+%%%%%%%                     End of File Assignment
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%\usepackage{lineno}
+\begin{document}
+
+%\linenumbers
+%%%% Here you just need to include/input your actual work. 
+%       The above files (dedication, acknowledgement, titlepage, etc etc) will all be added for you 
+%       using the files you assigned above. 
+%       If you want to input the above files manually you can comment out the \setFILE command above 
+%       and use \input or \include here. Generally you want to use \include to get your pagebreak.
+%       NOTE: If you input manually you will have to do some/all the formatting manually.
+
+\include{Chapters/Introduction}
+\include{Chapters/ExperimentalApparatus}
+\include{Chapters/AnalysisStrategy}
+\include{Chapters/Modeling}
+\include{Chapters/Results}
+\include{Chapters/Conclusions}
+
+\end{document}
+
